@@ -26,7 +26,8 @@ keys.addEventListener('click', (event) => {
   }
 
   if (target.classList.contains('decimal')) {
-    console.log('decimal', target.value);
+    inputDecimal(target.value);
+    updateDisplay();
     return;
   }
 
@@ -37,6 +38,12 @@ keys.addEventListener('click', (event) => {
 
   console.log('digit', target.value);
 });
+
+function inputDecimal(dot){
+  if(! calculator.displayValue.includes(dot)){
+    calculator.displayValue += dot;
+  }
+}
 //using keys on the keyboard instead of the display keys
 
 //1
