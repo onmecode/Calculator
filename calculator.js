@@ -1,9 +1,8 @@
-//actual working calculator
 const calculator = {
   displayValue: '0',
-  firstOperand: null,
+  firstOperand: "",
   waitingForSecondOperand: false,
-  operator: null,
+  operator: "",
 };
 
 function updateDisplay() {
@@ -27,12 +26,6 @@ keys.addEventListener('click', (event) => {
     return;
   }
 
-  if (target.classList.contains('decimal')) {
-    inputDecimal(target.value);
-    updateDisplay();
-    return;
-  }
-
   if (target.classList.contains('all-clear')) {
     console.log('clear', target.value)
     return;
@@ -41,13 +34,6 @@ keys.addEventListener('click', (event) => {
   inputDigit (target.value);
   updateDisplay();
 });
-
-function inputDecimal(dot){
-  if(! calculator.displayValue.includes(dot)){
-    calculator.displayValue += dot;
-  }
-}
-//using keys on the keyboard instead of the display keys
 
 function inputDigit(digit) {
 
